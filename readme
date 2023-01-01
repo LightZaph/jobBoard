@@ -1,0 +1,55 @@
+Task 01 :  
+
+La base de données a été réalisé sur Postgres sous le nom de jobs. 
+Elle compte 5 tables : 
+
+- La table advertisements qui contient toutes les annonces de jobs (poste, description du poste, type de contrat, le prix d’une heure de travail, les aptitudes requises pour le poste, les responsabilités liées au poste, la date de publication de l’annonce, le statut et enfin la référence du recruteur). 
+ 
+- La table user_, cette table contient les informations basiques sur un individu à savoir son nom, prénom, un mot de passe, un email, le contact et le rôle. 
+
+- La table appliquant, elle fait allusion aux demandeurs d’emploi et à leurs informations. Elle contient la référence vers l’annonce à laquelle ce dernier postule, son cv, un message contenant ses motivations, la date à laquelle il a postulé et enfin une référence vers ses informations personnelles. 
+
+- La table company qui contient les informations liées aux entreprises ayant des postes `à offrir ou alors qui en a déjà offert sur le site via un recruteur. Les informations enregistrées sur les entreprises sont le nom, la description, l’adresse, la ville, le pays, le logo et le site web.  
+
+- Enfin la table exchange. Cette table est le point de ralliement entre le demandeur d’emploi, le recruteur et l’offre d’emploi. Elle contient les informations relatives au demandeur d’emploi (ref applicant), au recruteur (ref recruiter) et à l’annonce postée (ref advertisements).  
+
+Task02 : 
+
+Nous avons réalisé la task 02 entièrement en HTML/CSS, nous pouvons voir dans cette tâche un premier visuel global du site, qui avec l'aide de REACT et Boostrap, changera au cours des tasks suivantes. Le bouton lean more est texturé mais ne renvoie rien.
+
+Task03 :
+
+Pour la task03, nous avons utilisé du Javascript Vanilla pour effectuer un fetch vers un fichierjson pour afficher des donnes via le back après l'event click sur le bouton learn more. le fichir Json est structuré de les manières suivantes :
+
+- jobinfo : Renvoie le nom de la sociétée.
+- tittle : Renvoie l'intitulé de poste
+- Jobpos : Renvoie la localisation du travail.
+- Jobdate : Renvoie la date de début de contrat.
+- Resume : Renvoie un bref résumé, ecrit a l'avance du poste.
+- description : Renvoie l'entiereté des informations du poste.
+
+Task 04 : 
+Le back-end quant à lui à été réalisé en sous-forme d’API sous Node Js avec Express js et quelques dépendances contenues dans le fichier package.json. 
+Pour chaque table, nous avons réalisé des opérations CRUD à savoir créer une instance, la modifier, la consulter et la supprimer avec certaines restrictions.
+
+Tout utilisateur peut consulter les informations liées à une offre d’emploi en cliquant sur le boutton « Learn more » 
+
+Pour que cela fonctionne convenablement, une connexion a été faite entre notre back-end et notre front-end a l’aide d’axions et cors. Grâce aux axions, les routes implémentées dans notre back-end ont pu être appelées dans le front et cors quant à lui nous a permis d’autoriser les échanges entre le front et le back.
+
+A partir de la tache 05, REACT et Boostrap on été utiliser il faut donc les installer dans le fichier :
+- npm install
+- npm install react-bootstrap bootstrap
+- npm start
+
+Task 05 : 
+En cliquant sur le boutton « Apply », un formulaire est ouvert et l’utilisateur peut y renseigner ses informations pour postuler à une offre d’emploi. Une fois cela fait, ses informations ainsi que l’offre d’emploi à laquelle il a postulé sont enregistrées dans la table exchange de notre base de données. Et cela peut être consulté à tout moment depuis le back. 
+
+
+Task 06 : 
+
+A l’aide notre table user_, nous avons accès à tous les utilisateurs de notre système de ce fait, une fois un postulant se connecte à son compte et veux postuler à une offre, une fois qu’il clique sur « Apply », ce dernier n’a plus besoin de rentrer ses informations personnelles, cela se fait automatiquement à l’aide du back et des routes conçues à cet effet, son travail consiste à renseigner ses motivations et soumettre le formulaire. 
+Il a aussi la possibilité de mettre à jour ses informations, et s’il n’est pas présent dans notre système, de créer un compte. 
+
+Task 07 : 
+
+A l’aide du système d’authentification, deux interfaces ont été mise en place une permettant à un utilisateur lambda de se connecter à son compte et faire ses opérations et une autre interface permettant à l’administrateur de faire des modifications sur la base de données. L’administrateur à tous les pouvoirs et cela sur toutes les tables de notre système. Cela a été implémenté depuis le back-end (en cours de finition sur le front je cherche encore à faire fonctionner ton CRUD sur mon pc) 
